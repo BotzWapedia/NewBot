@@ -1,3 +1,21 @@
+Skip to content
+BotzWapedia
+/
+NewBot
+Public
+Code
+Issues
+Pull requests
+Projects
+Wiki
+Security
+Insights
+Settings
+NewBot/handler.js
+@Warikrr
+Warikrr ArullOfc
+ 2 contributors
+832 lines (800 sloc)  38.8 KB
 const simple = require('./lib/simple')
 const util = require('util')
 
@@ -733,7 +751,6 @@ module.exports = {
     if (chat.delete) return
     await this.send2But(m.key.remoteJid, `
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
-
 ketik *.off delete* untuk mematikan pesan ini
 `.trim(), wm, 'Store', '.store', 'Menu', '.menu', m.message, {
       contextInfo: {
@@ -766,9 +783,7 @@ ketik *.off delete* untuk mematikan pesan ini
     if (!desc) return
     let caption = `
     @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
-
     ${desc}
-
     ketik *.off desc* untuk mematikan pesan ini
         `.trim()
     this.send2But(jid, caption, wm3, 'Store', '.store', 'Menu', '.menu', { contextInfo: { mentionedJid: this.parseMention(caption) } })
@@ -780,28 +795,28 @@ global.dfail = (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
     rowner: `╭─֍〔 ıll *OWNER* llı 〕֍─
-⬡ Perintah ini hanya untuk *pemilik bot*
+⬡ 「⚠️」 𝗧𝗵𝗶𝘀 𝗜𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗢𝗻𝗹𝘆 𝗢𝘄𝗻𝗲𝗿 𝗕𝗼𝘁𝘇
 ╰─────────────────֍`,
     owner: `╭─֍〔 ıll *OWNER* llı 〕֍─
-⬡ Perintah ini hanya untuk *pemilik bot*
+⬡ 「⚠️」 𝗧𝗵𝗶𝘀 𝗜𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗢𝗻𝗹𝘆 𝗢𝘄𝗻𝗲𝗿 𝗕𝗼𝘁𝘇
 ╰─────────────────֍`,
     mods: `╭─֍〔 ıll *OWNER* llı 〕֍─
-⬡ Perintah ini hanya untuk *pemilik bot*
+⬡ 「⚠️」 𝗧𝗵𝗶𝘀 𝗜𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗢𝗻𝗹𝘆 𝗢𝘄𝗻𝗲𝗿 𝗕𝗼𝘁𝘇
 ╰─────────────────֍`,
     premium: `╭─֍〔 ıll *PREMIUM* llı 〕֍─
-⬡ Fitur ini hanya tersedia untuk user *Premium*
+⬡ 「❗️」 𝗧𝗵𝗶𝘀 𝗜𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗢𝗻𝗹𝘆 𝗨𝘀𝗲𝗿 𝗣𝗿𝗲𝗺𝗶𝘂𝗺
 ╰─────────────────֍`,
     group: `╭─֍〔 ıll *GROUP* llı 〕֍─
-⬡ Fitur ini hanya dapat digunakan didalam grup!!
+⬡ 「❕」 𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗜𝘀 𝗦𝗽𝗲𝗱𝗶𝗳𝗶𝗰𝗮𝗹𝗹𝘆 𝗨𝘀𝗲𝗱 𝗢𝗻 𝗚𝗿𝗼𝘂𝗽𝘀 
 ╰─────────────────֍`,
     private: `╭─֍〔 ıll *PRIVATE* llı 〕֍─
-⬡ Fitur ini hanya dapat digunakan diprivate chat
+⬡ 「❕」 𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗜𝘀 𝗦𝗽𝗲𝗱𝗶𝗳𝗶𝗰𝗮𝗹𝗹𝘆 𝗨𝘀𝗲𝗱 𝗢𝗻 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗖𝗵𝗮𝘁
 ╰─────────────────֍`,
     admin: `╭─֍〔 ıll *ADMIN GROUP* llı 〕֍─
-⬡ Fitur ini hanya tersedia untuk admin grup!!
+⬡ 「❗️」 𝗧𝗵𝗶𝘀 𝗜𝘀 𝗙𝗶𝘁𝘂𝗿 𝗢𝗻𝗹𝘆 𝗔𝗱𝗺𝗶𝗻 𝗚𝗿𝗼𝘂𝗽
 ╰─────────────────֍`,
     botAdmin: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Fitur ini tidak dapat work, bot tidak menjadi admin
+⬡ 「❗️」 𝗠𝗮𝗸𝗲 𝗕𝗼𝘁𝘇 𝗔𝗱𝗺𝗶𝗻
 ╰─────────────────֍`,
     restrict: 'Fitur ini di *disable*!',
     }[type]
@@ -830,3 +845,17 @@ fs.watchFile(file, () => {
   delete require.cache[file]
   if (global.reloadHandler) console.log(global.reloadHandler())
 })
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
