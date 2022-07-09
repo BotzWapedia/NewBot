@@ -11,7 +11,7 @@ global.mods = ['6285872761910','6285794408499','6287829536442']
 global.prems = ['6285872761910','6285794408499','6287829536442'] 
 
 //=============『 Info Owner 』============== //
-global.nameowner = 'ArullOfc ✰'
+global.nameowner = 'ᴹᴿ᭄ 𝔸𝕟𝕕𝕙𝕪𝕔𝕒𝔾𝕒𝕟𝕫ོ ×፝֟͜×'
 global.numberowner = '6285872761910','6285794408499','6287829536442'
 global.instagram = 'https://instagram.com/andhycarsrofficial'
 global.github = 'https://github.com/BotzWapedia'
